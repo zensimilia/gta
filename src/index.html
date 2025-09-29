@@ -144,6 +144,11 @@
               this.station.play();
               this.station.mute(false);
             },
+            onloaderror: () => {
+              this.tuneFX.pause();
+              this.station = null;
+              this.currentStream = null;
+            },
           });
           this.currentStream = stream;
           this.setMediaMetadata(stream);
