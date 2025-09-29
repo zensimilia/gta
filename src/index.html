@@ -145,7 +145,7 @@
               this.station.mute(false);
             },
             onloaderror: () => {
-              this.tuneFX.pause();
+              this.tuneFX.fade(1, 0, 2000);
               this.station = null;
               this.currentStream = null;
             },
