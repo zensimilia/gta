@@ -189,6 +189,7 @@
             friction: 0.2,
             dragThreshold: 10,
           });
+          this.$refs.carousel.focus();
           this.carousel.on("change", (index) => {
             this.streamLoad(this.data[index]);
           });
