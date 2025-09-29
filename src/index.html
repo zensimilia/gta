@@ -93,12 +93,14 @@
         carousel: null,
         isLoading: false,
         isMuted: false,
+        shuffle: true,
         dataURL: "/data.json",
+        tuneFxURL: "/static/tune.aac",
         version: "1.0.4",
 
         init() {
           this.tuneFX = new Howl({
-            src: ["static/tune.aac"],
+            src: [this.tuneFxURL],
             html5: true,
             loop: true,
             preload: true,
@@ -157,8 +159,8 @@
           fetch(this.dataURL)
             .then((res) => res.json())
             .then((data) => {
-              //data.sort((a, b) => a.id - b.id);
-              this.fy(data);
+              if (this.shuffle) this.fy(data);
+              else data.sort((a, b) => a.id - b.id);
               this.data = data;
               this.initCarousel();
             })
