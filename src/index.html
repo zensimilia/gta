@@ -70,12 +70,12 @@
       </div>
 
       <div x-ref="carousel" class="relative grid col-start-1 row-start-1 h-full">
-        <template x-for="radio in data" :key="radio.id">
+        <template x-for="(radio, index) in data" :key="radio.id">
           <div class="cell mx-4 w-2/5 sm:w-1/5 cursor-pointer text-center h-auto">
             <img
               :src="getCoverURL(radio.logo)"
               :alt="radio.title"
-              :class="{'muted': currentStream && currentStream.id == radio.id && isMuted || !station}"
+              :class="{'muted': carousel.selectedIndex == index && (isMuted || !station )}"
               class="mx-auto transition-all duration-300 opacity-50 scale-75"
               x-show="!isLoading"
               x-transition
@@ -99,7 +99,7 @@
         shuffle: true,
         dataURL: "/data.json",
         tuneFxURL: "/static/tune.aac",
-        version: "1.0.4",
+        version: "1.0.5",
 
         init() {
           this.tuneFX = new Howl({
@@ -110,6 +110,9 @@
             autoplay: false,
             onplay: () => {
               this.tuneFX.seek(Math.round(Date.now() / 100) % this.tuneFX.duration());
+            },
+            onfade: () => {
+              this.tuneFX.pause();
             },
           });
           this.fetchData();
