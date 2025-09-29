@@ -1,6 +1,8 @@
 # GTA Radio Online
 
-A static website for easy listening to GTA radio stations. Edit `data.json` to specify the URLs of your stations and its logos (upload to `src/cover` folder). You can also get data from your API in format:
+A static website for easy listening to GTA radio stations. The radio stations are provided for reference only.
+Edit `data.json` to specify the URLs of your stations and its logos (upload to `src/cover` folder).
+You can also get data from your API in format:
 
 ```json
 [
@@ -39,3 +41,9 @@ Set ot create file `.env`
 
 - **NGINX_HOST** hostname (default: localhost)
 - **NGINX_PORT** port (default: 80)
+
+## Disclaimer
+
+All logos, brand names, musical compositions, sound recordings, and other audio materials remain the property
+of their respective rights holders and are protected by copyright and related rights. Playback is provided “as is”
+and, where applicable, under appropriate licenses/permissions.
