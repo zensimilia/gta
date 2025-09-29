@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GTA RADIO</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flickity@3.0.0/dist/flickity.pkgd.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.core.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.10.5/cdn.min.js" defer></script>
+
+    <link rel="icon" type="image/png" href="static/favicon.png" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flickity@3.0.0/css/flickity.min.css" />
+    <link rel="stylesheet" href="static/main.css" />
+
+    <style type="text/tailwindcss">
+      html,
+      body {
+        @apply h-full w-full;
+        @apply text-white bg-black;
+      }
+      .flickity-viewport {
+        @apply !h-full;
+      }
+      .flickity-slider {
+        @apply flex items-center;
+      }
+      .flickity-cell.is-selected img {
+        @apply opacity-100 scale-100;
+      }
+      .muted {
+        @apply animate-pulse;
+      }
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
+  </head>
+
+  <body class="flex">
+    <div x-data="player" x-cloak class="w-full h-full relative">
+      <div x-show="isLoading" x-transition class="absolute top-1/2 w-full px-8">
+        <p class="text-center animate-pulse uppercase text-xl">Loading</p>
+      </div>
+
+      <div
+        class="absolute w-2/6 left-0 h-full bg-gradient-to-r from-black to-transparent z-40 pointer-events-none"
+      ></div>
+      <div
+        class="absolute w-2/6 right-0 h-full bg-gradient-to-l from-black to-transparent z-40 pointer-events-none"
+      ></div>
+      <div
+        class="absolute right-0 left-0 bottom-0 px-8 mx-auto max-w-max md:max-w-md text-xs/3 tracking-tight text-center text-white/20 mb-4 z-50 pointer-events-none"
+      >
+        <p>
+          <span x-text="new Date().getFullYear()"></span> &copy;
+          <a href="https://github.com/zensimilia" target="_blank" class="underline pointer-events-auto">Di M Dub</a>.
+          Some rights reserved. v<span x-text="version"></span>
+        </p>
+        <p>
+          All logos, brand names, musical compositions, sound recordings, and other audio materials remain the property
+          of their respective rights holders and are protected by copyright and related rights. Playback is provided “as
+          is” and, where applicable, under appropriate licenses/permissions.
+        </p>
+      </div>
+
+      <div x-ref="carousel" class="relative grid col-start-1 row-start-1 h-full">
+        <template x-for="radio in data" :key="radio.id">
+          <div class="cell mx-4 w-2/5 sm:w-1/5 cursor-pointer text-center h-auto">
+            <img
+              :src="getCoverURL(radio.logo)"
+              :alt="radio.title"
+              :class="{'muted': currentStream && currentStream.id == radio.id && isMuted || !station}"
+              class="mx-auto transition-all duration-300 opacity-50 scale-75"
+              x-show="!isLoading"
+              x-transition
+            />
+          </div>
+        </template>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function player() {
+      return {
+        data: null,
+        station: null,
+        tuneFX: null,
+        currentStream: null,
+        carousel: null,
+        isLoading: false,
+        isMuted: false,
+        dataURL: "/data.json",
+        version: "1.0.4",
+
+        init() {
+          this.tuneFX = new Howl({
+            src: ["static/tune.aac"],
+            html5: true,
+            loop: true,
+            preload: true,
+            autoplay: false,
+            onplay: () => {
+              this.tuneFX.seek(Math.round(Date.now() / 100) % this.tuneFX.duration());
+            },
+          });
+          this.fetchData();
+        },
+
+        // array shuffle
+        fy(a, b, c, d) {
+          c = a.length;
+          while (c) (b = (Math.random() * c--) | 0), (d = a[c]), (a[c] = a[b]), (a[b] = d);
+        },
+
+        getCoverURL(fileName) {
+          if (fileName) return `cover/${fileName}`;
+        },
+
+        toggleMute() {
+          this.isMuted = !this.isMuted;
+          this.station.mute(this.isMuted);
+        },
+
+        streamLoad(stream) {
+          if (this.currentStream && this.currentStream.id == stream.id) return this.toggleMute();
+          if (this.station) this.station.unload();
+          this.tuneFX.pause();
+          if (!this.isMuted) this.tuneFX.play();
+          this.station = new Howl({
+            src: [stream.file],
+            format: ["aac", "mp3"],
+            html5: true,
+            onload: () => {
+              this.tuneFX.pause();
+              this.station.play();
+              this.station.mute(false);
+            },
+          });
+          this.currentStream = stream;
+          this.setMediaMetadata(stream);
+        },
+
+        setMediaMetadata(data) {
+          navigator.mediaSession.metadata = new MediaMetadata({
+            title: data.title,
+            artist: data.game,
+            artwork: [{ src: this.getCoverURL(data.logo) }],
+          });
+        },
+
+        fetchData() {
+          this.isLoading = true;
+          fetch(this.dataURL)
+            .then((res) => res.json())
+            .then((data) => {
+              //data.sort((a, b) => a.id - b.id);
+              this.fy(data);
+              this.data = data;
+              this.initCarousel();
+            })
+            .finally(() => (this.isLoading = false));
+        },
+
+        async initCarousel() {
+          await this.$nextTick();
+          this.carousel = new Flickity(this.$refs.carousel, {
+            wrapAround: true,
+            cellSelector: ".cell",
+            pageDots: false,
+            prevNextButtons: false,
+            selectedAttraction: 0.01,
+            friction: 0.2,
+            dragThreshold: 10,
+          });
+          this.carousel.on("change", (index) => {
+            this.streamLoad(this.data[index]);
+          });
+          this.carousel.on("staticClick", (event, pointer, cellElement, cellIndex) => {
+            if (!cellElement) return;
+            if (cellIndex == this.carousel.selectedIndex) return this.streamLoad(this.data[cellIndex]);
+            this.carousel.select(cellIndex);
+          });
+        },
+      };
+    }
+  </script>
+</html>

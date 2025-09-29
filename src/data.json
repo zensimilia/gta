@@ -1,0 +1,213 @@
+[
+  {
+    "title": "Chatterbox FM",
+    "file": "https://audio.gtaradio.net/3/chat",
+    "logo": "chat.jpg",
+    "game": "GTA III",
+    "id": 8
+  },
+  {
+    "title": "Double Clef FM",
+    "file": "https://audio.gtaradio.net/3/class",
+    "logo": "class.jpg",
+    "game": "GTA III",
+    "id": 7
+  },
+  {
+    "title": "Flashback 95.6",
+    "file": "https://audio.gtaradio.net/3/flash",
+    "logo": "flash.jpg",
+    "game": "GTA III",
+    "frequency": 95.6,
+    "id": 6
+  },
+  {
+    "title": "Game Radio",
+    "file": "https://audio.gtaradio.net/3/game",
+    "logo": "game.jpg",
+    "game": "GTA III",
+    "id": 0
+  },
+  {
+    "title": "Head Radio",
+    "file": "https://audio.gtaradio.net/3/head",
+    "logo": "head.jpg",
+    "game": "GTA III",
+    "id": 4
+  },
+  {
+    "title": "K-JAH",
+    "file": "https://audio.gtaradio.net/3/kjah",
+    "logo": "kjah.jpg",
+    "game": "GTA III",
+    "id": 1
+  },
+  {
+    "title": "Lips 106",
+    "file": "https://audio.gtaradio.net/3/lips",
+    "logo": "lips.jpg",
+    "game": "GTA III",
+    "frequency": 106,
+    "id": 5
+  },
+  {
+    "title": "MSX FM",
+    "file": "https://audio.gtaradio.net/3/msx",
+    "logo": "msx.jpg",
+    "game": "GTA III",
+    "frequency": 98,
+    "id": 2
+  },
+  {
+    "title": "Rise FM",
+    "file": "https://audio.gtaradio.net/3/rise",
+    "logo": "rise.jpg",
+    "game": "GTA III",
+    "id": 3
+  },
+  {
+    "title": "Wildstyle",
+    "file": "https://audio.gtaradio.net/vc/wild",
+    "logo": "wild.jpg",
+    "game": "GTA Vice City",
+    "id": 9
+  },
+  {
+    "title": "Flash FM",
+    "file": "https://audio.gtaradio.net/vc/flash",
+    "logo": "flash-vc.jpg",
+    "game": "GTA Vice City",
+    "id": 10
+  },
+  {
+    "title": "K-Chat",
+    "file": "https://audio.gtaradio.net/vc/kchat",
+    "logo": "kchat.jpg",
+    "game": "GTA Vice City",
+    "id": 11
+  },
+  {
+    "title": "Fever 105",
+    "file": "https://audio.gtaradio.net/vc/fever",
+    "logo": "fever.jpg",
+    "game": "GTA Vice City",
+    "frequency": 105,
+    "id": 12
+  },
+  {
+    "title": "V-Rock",
+    "file": "https://audio.gtaradio.net/vc/vrock",
+    "logo": "rock.jpg",
+    "game": "GTA Vice City",
+    "id": 13
+  },
+  {
+    "title": "Vice City Public Radio",
+    "file": "https://audio.gtaradio.net/vc/vcpr",
+    "logo": "vcpr.jpg",
+    "game": "GTA Vice City",
+    "id": 14
+  },
+  {
+    "title": "Radio Espantoso",
+    "file": "https://audio.gtaradio.net/vc/espant",
+    "logo": "espant.jpg",
+    "game": "GTA Vice City",
+    "id": 15
+  },
+  {
+    "title": "Emotion 98.3",
+    "file": "https://audio.gtaradio.net/vc/emotion",
+    "logo": "emotion.jpg",
+    "game": "GTA Vice City",
+    "frequency": 98.3,
+    "id": 16
+  },
+  {
+    "title": "Wave 103",
+    "file": "https://audio.gtaradio.net/vc/wave",
+    "logo": "wave.jpg",
+    "game": "GTA Vice City",
+    "frequency": 103,
+    "id": 17
+  },
+  {
+    "title": "Playback FM",
+    "file": "https://audio.gtaradio.net/sa/playback-fm",
+    "logo": "play.jpg",
+    "game": "GTA San Andreas",
+    "id": 18
+  },
+  {
+    "title": "K-Rose",
+    "file": "https://audio.gtaradio.net/sa/k-rose",
+    "logo": "krose.jpg",
+    "game": "GTA San Andreas",
+    "id": 19
+  },
+  {
+    "title": "K-DST",
+    "file": "https://audio.gtaradio.net/sa/k-dst",
+    "logo": "kdst.jpg",
+    "game": "GTA San Andreas",
+    "id": 20
+  },
+  {
+    "title": "Bounce FM",
+    "file": "https://audio.gtaradio.net/sa/bounce-fm",
+    "logo": "bounce.jpg",
+    "game": "GTA San Andreas",
+    "id": 21
+  },
+  {
+    "title": "SF-UR",
+    "file": "https://audio.gtaradio.net/sa/sfur",
+    "logo": "sfur.jpg",
+    "game": "GTA San Andreas",
+    "id": 22
+  },
+  {
+    "title": "Radio Los Santos",
+    "file": "https://audio.gtaradio.net/sa/radio-los-santos",
+    "logo": "rls.jpg",
+    "game": "GTA San Andreas",
+    "id": 23
+  },
+  {
+    "title": "Radio X",
+    "file": "https://audio.gtaradio.net/sa/radio-x",
+    "logo": "rx.jpg",
+    "game": "GTA San Andreas",
+    "id": 24
+  },
+  {
+    "title": "CSR 103.9",
+    "file": "https://audio.gtaradio.net/sa/csr",
+    "logo": "csr.jpg",
+    "game": "GTA San Andreas",
+    "frequency": 103.9,
+    "id": 25
+  },
+  {
+    "title": "K-JAH West",
+    "file": "https://audio.gtaradio.net/sa/k-jah",
+    "logo": "kjahw.jpg",
+    "game": "GTA San Andreas",
+    "id": 26
+  },
+  {
+    "title": "Master Sounds 98.3",
+    "file": "https://audio.gtaradio.net/sa/master-sounds",
+    "logo": "master.jpg",
+    "game": "GTA San Andreas",
+    "frequency": 98.3,
+    "id": 27
+  },
+  {
+    "title": "West Coast Talk Radio",
+    "file": "https://audio.gtaradio.net/sa/wctr",
+    "logo": "talk.jpg",
+    "game": "GTA San Andreas",
+    "id": 28
+  }
+]
