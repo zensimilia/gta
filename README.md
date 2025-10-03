@@ -1,8 +1,8 @@
 # GTA Radio Online
 
 A static website for easy listening to GTA radio stations. The radio stations are provided for reference only.
-Edit `data.json` to specify the URLs of your stations and its logos (upload to `src/cover` folder).
-You can also get data from your API in format:
+Edit `data.json` (copy `data.example.json`) to specify the URLs of your stations and its logos
+(upload to `src/cover` folder). You can also get data from your API in format:
 
 ```json
 [
