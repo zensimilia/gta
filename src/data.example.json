@@ -1,0 +1,282 @@
+[
+  {
+    "title": "Blaine County Radio",
+    "file": "/radio/5/bcr.mp3",
+    "logo": "bcr.jpg",
+    "game": "GTA V",
+    "id": 0
+  },
+  {
+    "title": "Blonded Radio",
+    "file": "/radio/5/blonded.mp3",
+    "logo": "blonded.jpg",
+    "game": "GTA V",
+    "id": 1
+  },
+  {
+    "title": "Blue Ark",
+    "file": "/radio/5/bark.mp3",
+    "logo": "bark.jpg",
+    "game": "GTA V",
+    "id": 2
+  },
+  {
+    "title": "Channel X",
+    "file": "/radio/5/x.mp3",
+    "logo": "x.jpg",
+    "game": "GTA V",
+    "id": 3
+  },
+  {
+    "title": "East Los FM",
+    "file": "/radio/5/east.mp3",
+    "logo": "east.jpg",
+    "game": "GTA V",
+    "id": 4
+  },
+  {
+    "title": "FlyLo FM",
+    "file": "/radio/5/flylo.mp3",
+    "logo": "flylo.jpg",
+    "game": "GTA V",
+    "id": 5
+  },
+  {
+    "title": "Los Santos Rock Radio",
+    "file": "/radio/5/rock.mp3",
+    "logo": "ls-rock.jpg",
+    "game": "GTA V",
+    "id": 6
+  },
+  {
+    "title": "Los Santos Underground Radio",
+    "file": "/radio/5/under.mp3",
+    "logo": "under.jpg",
+    "game": "GTA V",
+    "id": 7
+  },
+  {
+    "title": "Non-Stop-Pop FM",
+    "file": "/radio/5/pop.mp3",
+    "logo": "pop.jpg",
+    "game": "GTA V",
+    "id": 8
+  },
+  {
+    "title": "Radio Los Santos",
+    "file": "/radio/5/rls.mp3",
+    "logo": "v-rls.jpg",
+    "game": "GTA V",
+    "id": 9
+  },
+  {
+    "title": "Radio Mirror Park",
+    "file": "/radio/5/mpark.mp3",
+    "logo": "mpark.jpg",
+    "game": "GTA V",
+    "id": 10
+  },
+  {
+    "title": "Rebel Radio",
+    "file": "/radio/5/rebel.mp3",
+    "logo": "rebel.jpg",
+    "game": "GTA V",
+    "id": 11
+  },
+  {
+    "title": "Soulwax FM",
+    "file": "/radio/5/soulwax.mp3",
+    "logo": "soulwax.jpg",
+    "game": "GTA V",
+    "id": 12
+  },
+  {
+    "title": "Space 103.2",
+    "file": "/radio/5/space.mp3",
+    "logo": "space.jpg",
+    "game": "GTA V",
+    "frequency": 103.2,
+    "id": 13
+  },
+  {
+    "title": "The Lab",
+    "file": "/radio/5/lab.mp3",
+    "logo": "lab.jpg",
+    "game": "GTA V",
+    "id": 14
+  },
+  {
+    "title": "The Lowdown 91.1",
+    "file": "/radio/5/lowdown.mp3",
+    "logo": "lowdown.jpg",
+    "game": "GTA V",
+    "frequency": 91.1,
+    "id": 15
+  },
+  {
+    "title": "Vinewood Boulevard Radio",
+    "file": "/radio/5/vinewood.mp3",
+    "logo": "vinewood.jpg",
+    "game": "GTA V",
+    "id": 16
+  },
+  {
+    "title": "West Coast Classics",
+    "file": "/radio/5/wcc.mp3",
+    "logo": "wcc.jpg",
+    "game": "GTA V",
+    "id": 17
+  },
+  {
+    "title": "West Coast Talk Radio",
+    "file": "/radio/5/talk.mp3",
+    "logo": "wctr.jpg",
+    "game": "GTA V",
+    "id": 18
+  },
+  {
+    "title": "WorldWide FM",
+    "file": "/radio/5/world.mp3",
+    "logo": "world.jpg",
+    "game": "GTA V",
+    "id": 19
+  },
+  {
+    "title": "Double Clef FM",
+    "file": "/radio/3/CLASS.mp3",
+    "logo": "class.jpg",
+    "game": "GTA III",
+    "id": 100
+  },
+  {
+    "title": "Flashback 95.6",
+    "file": "/radio/3/FLASH.mp3",
+    "logo": "flash.jpg",
+    "game": "GTA III",
+    "frequency": 95.6,
+    "id": 101
+  },
+  {
+    "title": "Game Radio",
+    "file": "/radio/3/GAME.mp3",
+    "logo": "game.jpg",
+    "game": "GTA III",
+    "id": 102
+  },
+  {
+    "title": "Head Radio",
+    "file": "/radio/3/HEAD.mp3",
+    "logo": "head.jpg",
+    "game": "GTA III",
+    "id": 103
+  },
+  {
+    "title": "K-JAH",
+    "file": "/radio/3/KJAH.mp3",
+    "logo": "kjah.jpg",
+    "game": "GTA III",
+    "id": 104
+  },
+  {
+    "title": "Lips 106",
+    "file": "/radio/3/LIPS.mp3",
+    "logo": "lips.jpg",
+    "game": "GTA III",
+    "frequency": 106,
+    "id": 105
+  },
+  {
+    "title": "MSX FM",
+    "file": "/radio/3/MSX.mp3",
+    "logo": "msx.jpg",
+    "game": "GTA III",
+    "frequency": 98,
+    "id": 106
+  },
+  {
+    "title": "Rise FM",
+    "file": "/radio/3/RISE.mp3",
+    "logo": "rise.jpg",
+    "game": "GTA III",
+    "id": 107
+  },
+  {
+    "title": "Vladivostok FM",
+    "file": "/radio/4/vlad.mp3",
+    "logo": "vlad.jpg",
+    "game": "GTA IV",
+    "id": 200
+  },
+  {
+    "title": "Playback FM",
+    "file": "/radio/sa/playback.mp3",
+    "logo": "play.jpg",
+    "game": "GTA San Andreas",
+    "id": 300
+  },
+  {
+    "title": "K-Rose",
+    "file": "/radio/sa/krose.mp3",
+    "logo": "krose.jpg",
+    "game": "GTA San Andreas",
+    "id": 301
+  },
+  {
+    "title": "K-DST",
+    "file": "/radio/sa/kdst.mp3",
+    "logo": "kdst.jpg",
+    "game": "GTA San Andreas",
+    "id": 302
+  },
+  {
+    "title": "Bounce FM",
+    "file": "/radio/sa/bounce.mp3",
+    "logo": "bounce.jpg",
+    "game": "GTA San Andreas",
+    "id": 303
+  },
+  {
+    "title": "SF-UR",
+    "file": "/radio/sa/sfur.mp3",
+    "logo": "sfur.jpg",
+    "game": "GTA San Andreas",
+    "id": 304
+  },
+  {
+    "title": "Radio Los Santos",
+    "file": "/radio/sa/rls.mp3",
+    "logo": "rls.jpg",
+    "game": "GTA San Andreas",
+    "id": 305
+  },
+  {
+    "title": "Radio X",
+    "file": "/radio/sa/x.mp3",
+    "logo": "rx.jpg",
+    "game": "GTA San Andreas",
+    "id": 306
+  },
+  {
+    "title": "CSR 103.9",
+    "file": "/radio/sa/csr.mp3",
+    "logo": "csr.jpg",
+    "game": "GTA San Andreas",
+    "frequency": 103.9,
+    "id": 307
+  },
+  {
+    "title": "K-JAH West",
+    "file": "/radio/sa/kjahw.mp3",
+    "logo": "kjahw.jpg",
+    "game": "GTA San Andreas",
+    "id": 308
+  },
+  {
+    "title": "Master Sounds 98.3",
+    "file": "/radio/sa/ms.mp3",
+    "logo": "master.jpg",
+    "game": "GTA San Andreas",
+    "frequency": 98.3,
+    "id": 309
+  }
+]
