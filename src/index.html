@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>GTA RADIO</title>
+  <title>Grand Theft Auto Radio</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
@@ -37,42 +37,48 @@
       .flickity-cell.is-selected img {
         @apply opacity-100 scale-100;
       }
+      .curtain {
+        @apply absolute w-2/6 top-0 h-full z-40 pointer-events-none;
+        @apply from-black to-transparent;
+      }
+      .footer {
+        @apply absolute right-0 left-0 bottom-0 px-8 mx-auto max-w-max md:max-w-md mb-4 z-50;
+        @apply text-xs/3 text-center text-white/15 pointer-events-none
+      }
   </style>
 </head>
 
 <body>
   <div x-data="player" x-cloak class="w-full h-full relative">
-    <div x-ref="carousel" class="relative h-full">
+    <ul x-ref="carousel" class="relative h-full">
       <template x-for="(radio, index) in data" :key="radio.id">
-        <div class="cell mx-4 w-2/5 sm:w-1/5 cursor-pointer text-center h-auto">
+        <li class="cell mx-4 w-2/5 sm:w-1/5 cursor-pointer text-center h-auto">
           <img :src="radio.logo" :alt="radio.title"
             :class="{'animate-pulse': carousel && carousel.selectedIndex == index && (isMuted || !station )}"
             class="mx-auto transition-all duration-300 opacity-50 scale-75" x-show="carousel" />
-        </div>
+        </li>
       </template>
+    </ul>
+
+    <div x-show="isLoading" x-transition class="absolute flex inset-0 items-center w-full h-full p-8">
+      <p class="text-center animate-pulse uppercase text-xl mx-auto">Loading</p>
     </div>
 
-    <div x-show="isLoading" x-transition class="absolute top-1/2 w-full px-8">
-      <p class="text-center animate-pulse uppercase text-xl">Loading</p>
-    </div>
+    <div class="curtain left-0 bg-gradient-to-r"></div>
+    <div class="curtain right-0 bg-gradient-to-l"></div>
 
-    <div class="absolute w-2/6 left-0 top-0 h-full bg-gradient-to-r from-black to-transparent z-40 pointer-events-none">
-    </div>
-    <div
-      class="absolute w-2/6 right-0 top-0 h-full bg-gradient-to-l from-black to-transparent z-40 pointer-events-none">
-    </div>
-    <div
-      class="absolute right-0 left-0 bottom-0 px-8 mx-auto max-w-max md:max-w-md text-xs/3 text-center text-white/15 mb-4 z-50 pointer-events-none">
-      <p class="mb-2 uppercase tracking-tight">
+    <footer x-show="!isLoading" x-transition class="footer">
+      <p class="mb-2 uppercase tracking-tight" id="disclaimer">
         All logos, brand names, musical compositions, sound recordings, and other audio materials remain the property
         of their respective rights holders and are protected by copyright and related rights. Playback is provided
-        " as is" and, where applicable, under appropriate licenses/permissions. </p>
-      <p>
+        "as is" and, where applicable, under appropriate licenses/permissions.
+      </p>
+      <p id="copyright">
         <span x-text="new Date().getFullYear()"></span>
         <span x-text="`&copy; ${copyright}`"></span>
         <span x-text="`v${version}`"></span>
       </p>
-    </div>
+    </footer>
   </div>
 </body>
 
@@ -90,7 +96,7 @@
       shuffleInitial: true,
       dataURL: "data.json",
       tuneFxURL: "static/tune.aac",
-      version: "1.1.6",
+      version: "1.1.7",
       copyright: "Di M Dub. Some rights reserved.",
 
       init() {
