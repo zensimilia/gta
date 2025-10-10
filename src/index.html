@@ -86,10 +86,10 @@
       carousel: null,
       isLoading: false,
       isMuted: false,
-      shuffle: true,
+      shuffleInitial: true,
       dataURL: "data.json",
       tuneFxURL: "static/tune.aac",
-      version: "1.1.5",
+      version: "1.1.6",
 
       init() {
         this.fetchData();
@@ -106,12 +106,6 @@
             this.tuneFx.seek(Math.trunc(Date.now() / 1000 % this.tuneFx.duration()), this.tuneFxId);
           }
         });
-      },
-
-      // array shuffle
-      fy(a, b, c, d) {
-        c = a.length;
-        while (c) (b = (Math.random() * c--) | 0), (d = a[c]), (a[c] = a[b]), (a[b] = d);
       },
 
       toggleMute() {
@@ -161,8 +155,6 @@
         fetch(this.dataURL)
           .then((res) => res.json())
           .then((data) => {
-            if (this.shuffle) this.fy(data);
-            else data.sort((a, b) => a.id - b.id);
             this.data = data;
             this.initCarousel();
           })
@@ -172,6 +164,7 @@
       async initCarousel() {
         await this.$nextTick();
         this.carousel = new Flickity(this.$refs.carousel, {
+          initialIndex: this.shuffleInitial ? Math.floor(Math.random() * this.data.length) : 0,
           wrapAround: true,
           cellSelector: ".cell",
           pageDots: false,
