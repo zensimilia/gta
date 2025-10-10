@@ -44,7 +44,7 @@
     <div x-ref="carousel" class="relative h-full">
       <template x-for="(radio, index) in data" :key="radio.id">
         <div class="cell mx-4 w-2/5 sm:w-1/5 cursor-pointer text-center h-auto">
-          <img :src="getCoverURL(radio.logo)" :alt="radio.title"
+          <img :src="radio.logo" :alt="radio.title"
             :class="{'animate-pulse': carousel && carousel.selectedIndex == index && (isMuted || !station )}"
             class="mx-auto transition-all duration-300 opacity-50 scale-75" x-show="carousel" />
         </div>
@@ -114,10 +114,6 @@
         while (c) (b = (Math.random() * c--) | 0), (d = a[c]), (a[c] = a[b]), (a[b] = d);
       },
 
-      getCoverURL(fileName) {
-        if (fileName) return `cover/${fileName}`;
-      },
-
       toggleMute() {
         this.isMuted = !this.isMuted;
         Howler.mute(this.isMuted);
@@ -155,8 +151,9 @@
         navigator.mediaSession.metadata = new MediaMetadata({
           title: data.title,
           artist: data.game,
-          artwork: [{ src: this.getCoverURL(data.logo) }],
+          artwork: [{ src: data.logo }],
         });
+        document.querySelector("link[rel*='icon']").href = this.currentStream.logo;
       },
 
       fetchData() {
