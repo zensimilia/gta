@@ -1,12 +1,2 @@
-// tailwind.config.js
-module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-};
+// tailwind.config.js - trick only to enable the VS Code plugin
+module.exports = {};
