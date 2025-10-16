@@ -9,7 +9,7 @@ A static website for easy listening to GTA radio stations. Copy `data.example.js
   {
     "title": "My radio", // str, name
     "file": "https://radio.stream/online", // str, URL
-    "logo": "logo.jpg", // str, filename in src/cover
+    "logo": "https://radio.stream/logo.jpg", // str, URL
     "game": "Awesome game", // str, additional data
     "id": 0 // int, ID
   },

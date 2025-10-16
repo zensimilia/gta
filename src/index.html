@@ -27,19 +27,26 @@
       body {
         @apply h-full w-full;
         @apply text-white bg-black;
+        @apply bg-radial from-gray-950 from-20% to-black;
       }
       .flickity-viewport {
         @apply !h-full;
+        @apply mask-alpha;
+        @apply mask-radial-from-black mask-radial-from-20%;
+        @apply mask-radial-to-transparent mask-radial-to-80%;
       }
       .flickity-slider {
         @apply flex items-center;
+      }
+      .flickity-cell img {
+        @apply mask-luminance;
       }
       .flickity-cell.is-selected img {
         @apply opacity-100 scale-100;
       }
       .curtain {
         @apply absolute w-2/6 top-0 h-full z-40 pointer-events-none;
-        @apply from-black to-transparent;
+        @apply backdrop-blur-sm mask-alpha;
       }
       .footer {
         @apply absolute right-0 left-0 bottom-0 px-8 mx-auto max-w-max md:max-w-md mb-4 z-50;
@@ -54,7 +61,7 @@
       <template x-for="(radio, index) in data" :key="radio.id">
         <li class="cell mx-4 w-2/5 sm:w-1/5 cursor-pointer text-center h-auto">
           <img :src="radio.logo" :alt="radio.title"
-            :class="{'animate-pulse': carousel && carousel.selectedIndex == index && (isMuted || !station )}"
+            :class="{['mask-[url('+radio.logo+')]']: true, 'animate-pulse': carousel && carousel.selectedIndex == index && (isMuted || !station )}"
             class="mx-auto transition-all duration-300 opacity-50 scale-75" x-show="carousel" />
         </li>
       </template>
@@ -64,8 +71,8 @@
       <p class="text-center animate-pulse uppercase text-xl mx-auto">Loading</p>
     </div>
 
-    <div class="curtain left-0 bg-gradient-to-r"></div>
-    <div class="curtain right-0 bg-gradient-to-l"></div>
+    <div class="curtain left-0 bg-gradient-to-r mask-r-from-black mask-r-from-10% mask-r-to-transparent"></div>
+    <div class="curtain right-0 bg-gradient-to-l mask-l-from-black mask-l-from-10% mask-l-to-transparent"></div>
 
     <footer x-show="!isLoading" x-transition class="footer">
       <p class="mb-2 uppercase tracking-tight" id="disclaimer">
